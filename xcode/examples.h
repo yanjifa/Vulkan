@@ -135,6 +135,9 @@
 #	include "../bloom/bloom.cpp"
 #endif
 
+
+// DEFERRED
+
 // Runs in Release mode. Debug mode Metal validation will assert
 // UBO buffer length is too short for UBO size declared in shader.
 #ifdef MVK_deferred
@@ -153,7 +156,32 @@
 #endif
 
 
-// COMPUTE - Currently unsupported by MoltenVK
+// PHYSICALLY BASED RENDERING
+
+
+// COMPUTE
+
+#ifdef MVK_computeparticles
+#    include "../computeparticles/computeparticles.cpp"
+#endif
+
+#ifdef MVK_computenbody
+#    include "../computenbody/computenbody.cpp"
+#endif
+
+// Does not run. Metal does not natively support deriving length of
+// an array in a storage buffer (per GLSL SSBO .length() function).
+#ifdef MVK_raytracing
+#    include "../raytracing/raytracing.cpp"
+#endif
+
+#ifdef MVK_computecullandlod
+#    include "../computecullandlod/computecullandlod.cpp"
+#endif
+
+#ifdef MVK_computeshader
+#    include "../computeshader/computeshader.cpp"
+#endif
 
 
 // TESSELLATION - Currently unsupported by MoltenVK

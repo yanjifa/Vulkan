@@ -31,7 +31,7 @@
 #define ENABLE_VALIDATION false
 
 // Total number of objects (^3) in the scene
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) || defined(VK_USE_PLATFORM_IOS_MVK)
 #define OBJECT_COUNT 32
 #else
 #define OBJECT_COUNT 64
