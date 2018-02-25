@@ -8,6 +8,9 @@
 
 #include "vulkanexamplebase.h"
 
+#include <MoltenVK/vk_mvk_moltenvk.h>
+
+
 std::vector<const char*> VulkanExampleBase::args;
 
 VkResult VulkanExampleBase::createInstance(bool enableValidation)
@@ -904,6 +907,12 @@ void VulkanExampleBase::initVulkan()
 		vks::tools::exitFatal("Could not create Vulkan device: \n" + vks::tools::errorString(res), "Fatal error");
 	}
 	device = vulkanDevice->logicalDevice;
+
+    MVKDeviceConfiguration mvkConfig;
+    vkGetMoltenVKDeviceConfigurationMVK(device, &mvkConfig);
+    mvkConfig.debugMode = true;
+    vkSetMoltenVKDeviceConfigurationMVK(device, &mvkConfig);
+
 
 	// Get a graphics queue from the device
 	vkGetDeviceQueue(device, vulkanDevice->queueFamilyIndices.graphics, 0, &queue);
