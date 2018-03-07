@@ -4,7 +4,7 @@
 
 #MoltenVK Vulkan Examples
 
-Copyright (c) 2016-2017 [The Brenwill Workshop Ltd.](http://www.brenwill.com).
+Copyright (c) 2016-2018 [The Brenwill Workshop Ltd.](http://www.brenwill.com).
 This document is licensed under the MIT license (MIT) (http://opensource.org/licenses/MIT)
 
 *This document is written in [Markdown](http://en.wikipedia.org/wiki/Markdown) format. 
@@ -16,8 +16,8 @@ For best results, use a Markdown reader.*
 Introduction
 ------------
 
-The *Xcode* project in this folder builds and runs the *Vulkan* examples in this 
-repository on *iOS* and *macOS*, using the **MoltenVK** *Vulkan* driver.
+The *Xcode* project in this folder builds and runs the *Vulkan* examples in this repository on 
+*iOS* and *macOS*, using the [**MoltenVK**](https://github.com/KhronosGroup/MoltenVK) *Vulkan* driver.
 
 
 
@@ -27,25 +27,21 @@ Installing MoltenVK
 -------------------
 
 The examples in this repository can be run on *iOS* and *macOS* by using 
-the [**MoltenVK**](http://www.moltengl.com/moltenvk/) *Vulkan* driver.
+the [**MoltenVK**](https://github.com/KhronosGroup/MoltenVK) *Vulkan* driver.
 
-These examples require **MoltenVK 0.18.0** or greater.
+1. The **MoltenVK** repository [`README.md`](https://github.com/KhronosGroup/MoltenVK#install) 
+   file explains how to download and install the **MoltenVK** repository. Download and install
+   the **MoltenVK** repository into a folder beside this *Sascha Willems* `Vulkan` repository:
 
-Follow these instructions to install **MoltenVK**:
+		Vulkan/
+		MoltenVK/
 
-1. [Download](https://moltengl.com/free-trial/) the **Molten** free evaluation trial.
-   This free trial includes **MoltenVK**, is full-featured, and is not time-limited. 
-   You must purchase a license if you wish to use **MoltenVK** for a production 
-   application or game, but you can use the evaluation version to run these examples.
+   Or if you have installed **MoltenVK** in a different directory, create a symlink to it in
+   the parent directory of this *Sascha Willems* `Vulkan` repository:
    
-2. Unzip the **Molten** package, and move it to a folder outside this repository.
+   		ln -sfn path-to-MoltenVK
 
-3. Open a *Terminal* session and navigate to the directory containing this document,
-   remove the existing `MoltenVK` symbolic link in this directory, and create a new
-   symbolic link pointing to the `MoltenVK` directory in the **Molten** package:
-   
-   		cd Vulkan/xcode
-		ln -sfn path-to-Molten-package/MoltenVK
+2. [Build](https://github.com/KhronosGroup/MoltenVK#building) the **MoltenVK** runtime package.
 
 
 
