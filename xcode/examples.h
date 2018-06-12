@@ -38,7 +38,6 @@
 #	include "../texture/texture.cpp"
 #endif
 
-// Does not run. Metal does not support passing matrices between shader stages.
 #ifdef MVK_texturecubemap
 #	include "../texturecubemap/texturecubemap.cpp"
 #endif
@@ -57,7 +56,6 @@
 #	include "../dynamicuniformbuffer/dynamicuniformbuffer.cpp"
 #endif
 
-// Does not run. Metal does not support passing arrays between shader stages.
 #ifdef MVK_pushconstants
 #	include "../pushconstants/pushconstants.cpp"
 #endif
@@ -101,7 +99,6 @@
 #	include "../indirectdraw/indirectdraw.cpp"
 #endif
 
-// Does not run. Metal does not support passing matrices between shader stages.
 #ifdef MVK_hdr
 #	include "../hdr/hdr.cpp"
 #endif
@@ -138,8 +135,6 @@
 
 // DEFERRED
 
-// Runs in Release mode. Debug mode Metal validation will assert
-// UBO buffer length is too short for UBO size declared in shader.
 #ifdef MVK_deferred
 #	include "../deferred/deferred.cpp"
 #endif
