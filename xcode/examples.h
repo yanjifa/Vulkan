@@ -42,8 +42,6 @@
 #	include "../texturecubemap/texturecubemap.cpp"
 #endif
 
-// Runs in Release mode. Does not run in Debug mode, as Metal validation will
-// assert that UBO buffer length is too short for UBO size declared in shader.
 #ifdef MVK_texturearray
 #	include "../texturearray/texturearray.cpp"
 #endif
@@ -107,7 +105,6 @@
 #	include "../occlusionquery/occlusionquery.cpp"
 #endif
 
-// Does not run. Sampler arrays require Metal 2.
 #ifdef MVK_texturemipmapgen
 #	include "../texturemipmapgen/texturemipmapgen.cpp"
 #endif
