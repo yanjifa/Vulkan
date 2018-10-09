@@ -908,10 +908,11 @@ void VulkanExampleBase::initVulkan()
 	}
 	device = vulkanDevice->logicalDevice;
 
-    MVKDeviceConfiguration mvkConfig;
-    vkGetMoltenVKDeviceConfigurationMVK(device, &mvkConfig);
+	MVKConfiguration mvkConfig;
+	size_t appConfigSize = sizeof(mvkConfig);
+    vkGetMoltenVKConfigurationMVK(instance, &mvkConfig, &appConfigSize);
     mvkConfig.debugMode = true;
-    vkSetMoltenVKDeviceConfigurationMVK(device, &mvkConfig);
+    vkSetMoltenVKConfigurationMVK(instance, &mvkConfig, &appConfigSize);
 
 
 	// Get a graphics queue from the device
