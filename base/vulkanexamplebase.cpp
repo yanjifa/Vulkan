@@ -256,7 +256,7 @@ void VulkanExampleBase::renderFrame()
     fpsTimer += (float)tDiff;
     if (fpsTimer > 1000.0f)
     {
-        lastFPS = frameCounter;
+		lastFPS = static_cast<uint32_t>(((float)frameCounter / fpsTimer) * 1000.0f);
         updateTextOverlay();
         fpsTimer = 0.0f;
         frameCounter = 0;
